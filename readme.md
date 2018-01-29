@@ -45,10 +45,11 @@ This event could be taken and pushed to, let's say, a message broker which puts 
 
 `transcripter` is a module that helps you to observe a database and consume the change events in order to transfer it to different destinations. The main goals are:
 
-* easy to use API surface
-* resilient – when you start to observe after a certain time period, it will start where it left off
-* handles backpressure
-* output sink agnostic – you can decide where to send the change events
+* Easy to use API surface
+* Data Consistency - Due to the fact that the `binlog` won't contain the whole history, the library will create a snapshot before streaming the log
+* Resilient – when you start to observe after a certain time period, it will start where it left off
+* Handles backpressure
+* Output sink agnostic – you can decide where to send the change events
 
 ## Usage
 
